@@ -6,7 +6,10 @@ namespace Lab3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //TODO: LinkedList
+            //TODO: HashTable
+            //TODO: Reading from command line?
+            //TODO: Finding algo
         }
     }
 }
