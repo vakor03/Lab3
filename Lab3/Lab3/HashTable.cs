@@ -15,9 +15,9 @@ namespace Lab3
             _table = new LinkedList<int>[_length];
         }
 
-        public static HashFunction(string str)
+        /*public static HashFunction(string str)
         {
             
-        }
+        }*/
     }
 }
