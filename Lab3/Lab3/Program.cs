@@ -10,14 +10,16 @@ namespace Lab3
             //TODO: HashTable
             //TODO: Reading from command line?
             //TODO: Finding algo
-            /*ReadFile file = new ReadFile(@"C:\Users\UserPRO\Desktop\ddd.txt");
-            HashTable hashTable = new HashTable(10);
+            HashTable hashTable = InitTable();
+            Console.WriteLine(hashTable.GetByName("A"));
+        }
+
+        public static HashTable InitTable()
+        {
+            ReadFile file = new ReadFile(@"..\..\..\..\..\dict_processed.txt");
+            HashTable hashTable = new HashTable(50);
             hashTable.FillTable(file.Read());
-            for (int i = 0; i < 10; i++)
-            {
-                Console.Write($"{i} {hashTable.GetByIndex(i)}");
-                Console.WriteLine();
-            }*/
+            return hashTable;
         }
     }
 }
