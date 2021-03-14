@@ -19,7 +19,7 @@ namespace Lab3
 
         public int HashFunction(string str)
         {
-            int prime = 31;
+            int prime = 79;
             ulong hash = 0;
             for (int i = 0; i < str.Length; i++)
             {
@@ -39,6 +39,24 @@ namespace Lab3
         public string GetByIndex(int i)
         {
             return _table[i].GetElems();
+        }
+
+        public string GetByName(string name)
+        {
+            string definition = "";
+            int index = HashFunction(name);
+            Object<string> current = _table[index].Head;
+            while (current != null)
+            {
+                if (current.Data.ToUpper().Split(';')[0] == name.ToUpper())
+                {
+                    definition = current.Data;
+                    break;
+                }
+                current = current.Next;
+            }
+
+            return definition;
         }
     }
 }

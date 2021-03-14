@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace Lab3
 {
@@ -15,32 +14,32 @@ namespace Lab3
     }
     public struct LinkedList<T>
     {
-        private Object<T> _head;
+        public Object<T> Head;
         
         public void AddToBeginning(T data)
         {
             Object<T> obj = new Object<T>(data);
-            if (_head == null)
+            if (Head == null)
             {
-                _head = obj;
+                Head = obj;
             }
             else
             {
-                obj.Next = _head;
-                _head = obj;
+                obj.Next = Head;
+                Head = obj;
             }
         }
 
         public void AddToTheEnd(T data)
         {
             Object<T> obj = new Object<T>(data);
-            if (_head == null)
+            if (Head == null)
             {
-                _head = obj;
+                Head = obj;
             }
             else
             {
-                Object<T> current = _head;
+                Object<T> current = Head;
                 while (current.Next != null)
                 {
                     current = current.Next;
@@ -52,14 +51,13 @@ namespace Lab3
 
         public string GetElems()
         {
-            Object<T> current = _head;
+            Object<T> current = Head;
             string output = "";
             while (current != null)
             {
-                output += String.Join("\n\n", current.Data.ToString());
+                output += String.Concat("\n", current.Data.ToString());
                 current = current.Next;
             }
-
             return output;
         }
     }
