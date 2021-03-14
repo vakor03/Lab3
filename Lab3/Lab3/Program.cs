@@ -10,6 +10,7 @@ namespace Lab3
             //TODO: HashTable
             //TODO: Reading from command line?
             //TODO: Finding algo
+            
         }
     }
 }
