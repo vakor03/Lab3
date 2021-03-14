@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Lab3
 {
@@ -15,7 +16,7 @@ namespace Lab3
     public struct LinkedList<T>
     {
         private Object<T> _head;
-
+        
         public void AddToBeginning(T data)
         {
             Object<T> obj = new Object<T>(data);
@@ -49,14 +50,17 @@ namespace Lab3
             }
         }
 
-        public void PrintElems()
+        public string GetElems()
         {
             Object<T> current = _head;
+            string output = "";
             while (current != null)
             {
-                Console.WriteLine(current.Data.ToString());
+                output += String.Join("\n\n", current.Data.ToString());
                 current = current.Next;
             }
+
+            return output;
         }
     }
 }
