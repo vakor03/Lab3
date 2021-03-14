@@ -2,33 +2,61 @@
 
 namespace Lab3
 {
+    public class Object<T>
+    {
+        public T Data;
+        public Object<T> Next = null;
+
+        public Object (T data)
+        {
+            Data = data;
+        }
+    }
     public struct LinkedList<T>
     {
-        private  int _pointer;
-        private T[] _values;
-        public LinkedList(T[] values)
+        private Object<T> _head;
+
+        public void AddToBeginning(T data)
         {
-            _pointer = 0;
-            this._values = values;
+            Object<T> obj = new Object<T>(data);
+            if (_head == null)
+            {
+                _head = obj;
+            }
+            else
+            {
+                obj.Next = _head;
+                _head = obj;
+            }
         }
-        public void Add(T el)
+
+        public void AddToTheEnd(T data)
         {
-            T[] temp = new T[_values.Length+1];
-            Array.Copy(_values,temp,_values.Length);
-            temp[temp.Length - 1] = el;
-            _values = temp;
+            Object<T> obj = new Object<T>(data);
+            if (_head == null)
+            {
+                _head = obj;
+            }
+            else
+            {
+                Object<T> current = _head;
+                while (current.Next != null)
+                {
+                    current = current.Next;
+                }
+
+                current.Next = obj;
+            }
         }
-        public int GetLength()
+
+        public void PrintElems()
         {
-            return _values.Length;
-        }
-        public void PointerToNull()
-        {
-            _pointer = 0;
-        }
-        public T GetNext()
-        {
-            return _values[_pointer++];
+            Object<T> current = _head;
+            while (current != null)
+            {
+                Console.WriteLine(current.Data.ToString());
+                current = current.Next;
+            }
         }
     }
 }
