@@ -11,9 +11,10 @@ namespace Lab3
             //TODO: Reading from command line?
             //TODO: Finding algo
             HashTable hashTable = InitTable();
-            //string[] words = Console.ReadLine().Split(',',' ','.');
+            
             foreach (var word in args)
             {
+                Console.WriteLine();
                 Console.WriteLine(hashTable.GetByName(word));
             }
             
