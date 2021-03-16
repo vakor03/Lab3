@@ -11,12 +11,17 @@ namespace Lab3
             //TODO: Reading from command line?
             //TODO: Finding algo
             HashTable hashTable = InitTable();
-            Console.WriteLine(hashTable.GetByName("A"));
+            //string[] words = Console.ReadLine().Split(',',' ','.');
+            foreach (var word in args)
+            {
+                Console.WriteLine(hashTable.GetByName(word));
+            }
+            
         }
 
         public static HashTable InitTable()
         {
-            ReadFile file = new ReadFile(@"..\..\..\..\..\dict_processed.txt");
+            ReadFile file = new ReadFile(@"..\..\..\..\..\dict_processed true.txt");
             HashTable hashTable = new HashTable(50);
             hashTable.FillTable(file.Read());
             return hashTable;
