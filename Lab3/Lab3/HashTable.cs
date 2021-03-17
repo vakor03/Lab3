@@ -70,7 +70,7 @@ namespace Lab3
                     {
                         firstWord += current.Data[i];
                     }
-                    temp[HashFunction(firstWord)].AddToTheEnd(current.Data);
+                    temp[HashFunction(firstWord)].AddToBeginning(current.Data);
                     current = current.Next;
                 }
             }

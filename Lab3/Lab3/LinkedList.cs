@@ -30,24 +30,24 @@ namespace Lab3
             }
         }
 
-        public void AddToTheEnd(T data)
-        {
-            Object<T> obj = new Object<T>(data);
-            if (Head == null)
-            {
-                Head = obj;
-            }
-            else
-            {
-                Object<T> current = Head;
-                while (current.Next != null)
-                {
-                    current = current.Next;
-                }
-
-                current.Next = obj;
-            }
-        }
+        // public void AddToTheEnd(T data)
+        // {
+        //     Object<T> obj = new Object<T>(data);
+        //     if (Head == null)
+        //     {
+        //         Head = obj;
+        //     }
+        //     else
+        //     {
+        //         Object<T> current = Head;
+        //         while (current.Next != null)
+        //         {
+        //             current = current.Next;
+        //         }
+        //
+        //         current.Next = obj;
+        //     }
+        // }
 
         public string GetElems()
         {
