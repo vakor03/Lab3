@@ -16,14 +16,14 @@ namespace Lab3
             foreach (var word in words)
             {
                 Console.WriteLine();
-                Console.WriteLine(hashTable.GetByName(word));
+                Console.WriteLine($"{word}: {string.Join(",", hashTable.GetByNameNew(word))}");
             }
             
         }
 
         public static HashTable InitTable()
         {
-            ReadFile file = new ReadFile(@"..\..\..\..\..\dict_processed true.txt");
+            ReadFile file = new ReadFile(@"..\..\..\..\..\dict_processed.txt");
             HashTable hashTable = new HashTable(50);
             hashTable.FillTable(file.Read());
             return hashTable;

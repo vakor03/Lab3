@@ -94,5 +94,33 @@ namespace Lab3
 
             return definition;
         }
+        public string[] GetByNameNew(string name)
+        {
+            int index = HashFunction(name.ToUpper());
+            Object<string> current = _table[index].Head;
+            int N = 0;
+            while (current != null)
+            {
+                if (current.Data.Split(';')[0] == name.ToUpper())
+                { 
+                    N++; 
+                }
+                current = current.Next;
+            }
+            current = _table[index].Head;
+            string[] result = new string[N];
+            int i = 0;
+            while (current != null)
+            {
+                if (current.Data.Split(';')[0] == name.ToUpper())
+                {
+                    result[i] = current.Data.Split(';')[1];
+                    i++;
+                }
+                current = current.Next;
+            }
+
+            return result;
+        }
     }
 }
