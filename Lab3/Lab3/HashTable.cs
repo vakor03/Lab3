@@ -41,7 +41,12 @@ namespace Lab3
                 {
                     ResizeHashTable();
                 }
-                _table[HashFunction(str.Split(';')[0])].AddToTheEnd(str);
+                string firstWord = "";
+                for (int i = 0; i < str.Length && str[i]!=';'; i++)
+                {
+                    firstWord += str[i];
+                }
+                _table[HashFunction(firstWord)].AddToBeginning(str);
                 NStr++;
             }
         }
@@ -60,7 +65,12 @@ namespace Lab3
                 Object<string> current = linkedList.Head;
                 while (current != null)
                 {
-                    temp[HashFunction(current.Data.Split(';')[0])].AddToTheEnd(current.Data);
+                    string firstWord = "";
+                    for (int i = 0; i < current.Data.Length && current.Data[i]!=';'; i++)
+                    {
+                        firstWord += current.Data[i];
+                    }
+                    temp[HashFunction(firstWord)].AddToTheEnd(current.Data);
                     current = current.Next;
                 }
             }
